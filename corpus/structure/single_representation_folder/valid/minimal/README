@@ -1,0 +1,7 @@
+# Minimal IP to pass requirements for single representation folder structure
+
+The IP consists of one empty folder named "data"
+
+**Valid for:**
+	* The representation folder MUST include a sub-folder named data (CSP11)
+
