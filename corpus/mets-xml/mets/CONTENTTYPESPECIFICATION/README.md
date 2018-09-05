@@ -51,7 +51,7 @@
 
 **Error message:** mets/@CONTENTTYPESPECIFICATION attribute value does not match any of the allowed values in the vocabulary. MUST be: a value from the fixed vocabulary of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ].
 
-**Minimal test IP structure:** METS.xml file with mets/@CONTENTTYPESPECIFICATION = "1"
+**Minimal test IP structure:** METS.xml file with mets/@CONTENTTYPESPECIFICATION = "1". Note that @CONTENTTYPESPECIFICATION is an extension of METS by CSIP, so proper namespace declarations must be present, e.g.:
 ```
 <mets xmlns="http://www.loc.gov/METS/" 
     xmlns:csip="DILCIS"

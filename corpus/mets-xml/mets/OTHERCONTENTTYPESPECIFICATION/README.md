@@ -2,7 +2,7 @@
 
 **ID:** mets-xml_mets_OTHERCONTENTTYPESPECIFICATION
 
-**Rule:** If @CONTENTTYPESPECIFICATION = "OTHER" then @OTHERCONTENTTYPESPECIFICATION MUST be exist and have a non-empty value (CSIP5).
+**Rule:** If @CONTENTTYPESPECIFICATION = "OTHER" then @OTHERCONTENTTYPESPECIFICATION MUST exist and have a non-empty value (CSIP5).
 
 **Reference:** CSIP5, CSIP Ch. [5.3.1. Use of the METS root element (element mets)](https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/implementation/index.md#531use-of-the-mets-root-element-element-mets)
 
@@ -48,7 +48,7 @@
 
 **Error level:** `INFO`
 
-**Error message:** mets/@OTHERCONTENTTYPESPECIFICATION attribute exists, but is not required as @CONTENTTYPESPECIFICATION is not "OTHER".
+**Error message:** mets/@OTHERCONTENTTYPESPECIFICATION attribute exists, but is not required as the value of @CONTENTTYPESPECIFICATION is not "OTHER".
 
 **Minimal test IP structure:** METS.xml file with @CONTENTTYPESPECIFICATION != "OTHER" and mets/@OTHERCONTENTTYPESPECIFICATION exists. Note that @CONTENTTYPESPECIFICATION and @OTHERCONTENTTYPESPECIFICATION are extensions of METS by CSIP, so proper namespace declarations must be present, e.g.:
 ```
