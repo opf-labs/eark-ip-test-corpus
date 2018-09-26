@@ -1,0 +1,36 @@
+<testCase>
+  <id specification="" version="" section="" requirement="" />
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP6</reference>
+  <description>
+    @PROFILE MUST be present.
+    @PROFILE MUST have a non-empty value.
+    @PROFILE MUST have a value that is a URL of the used profile.
+  </description>
+  <dependencies />
+  <rules>
+    <rule id="1">
+      <description>@PROFILE attribute does not exist</description>
+      <error level="ERROR">
+        <message>
+          mets/@PROFILE attribute does not exist. MUST be: attribute exists and has a value that is a URL of the used profile.
+        </message>
+      </error>
+    </rule>
+    <rule id="2">
+      <description>@PROFILE attribute value is emptry string</description>
+      <error level="ERROR">
+        <message>
+          mets/@PROFILE attribute value is emptry string. MUST be: attribute exists and has a value that is a URL of the used profile.
+        </message>
+      </error>
+    </rule>
+    <rule id="3">
+      <description>@PROFILE attribute value is not a URL as defined in RFC3986 and RFC3987.</description>
+      <error level="ERROR">
+        <message>
+          mets/@PROFILE attribute value is not a URL. MUST be: attribute exists and has a value that is a URL of the used profile.
+        </message>
+      </error>
+    </rule>
+  </rules>
+</testCase>

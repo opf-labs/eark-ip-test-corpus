@@ -1,0 +1,36 @@
+<testCase>
+  <id specification="" version="" section="" requirement="" />
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP5</reference>
+  <description>
+    If @CONTENTTYPESPECIFICATION = "OTHER" then @OTHERCONTENTTYPESPECIFICATION MUST exist and have a non-empty value.
+  </description>
+  <dependencies />
+  <rules>
+    <rule id="1">
+      <description>@CONTENTTYPESPECIFICATION = "OTHER", but @OTHERCONTENTTYPESPECIFICATION attribute does not exist</description>
+      <error level="ERROR">
+        <message>
+          mets/@OTHERCONTENTTYPESPECIFICATION attribute does not exist. MUST be: if @CONTENTTYPESPECIFICATION = "OTHER" then @OTHERCONTENTTYPESPECIFICATION MUST exist and have a value that records the name of the content information type specification.
+        </message>
+      </error>
+    </rule>
+    <rule id="2">
+      <description>@OTHERCONTENTTYPESPECIFICATION attribute is required and exists, but its value is emptry string</description>
+      <error level="ERROR">
+        <message>
+          mets/@OTHERCONTENTTYPESPECIFICATION attribute value is emptry string. MUST be: if @CONTENTTYPESPECIFICATION = "OTHER" then @OTHERCONTENTTYPESPECIFICATION MUST exist and have a value that records the name of the content information type specification.
+        </message>
+      </error>
+    </rule>
+    <rule id="3">
+      <description>
+        @CONTENTTYPESPECIFICATION != "OTHER", so @OTHERCONTENTTYPESPECIFICATION attribute is not required, but exists
+      </description>
+      <error level="INFO">
+        <message>
+          mets/@OTHERCONTENTTYPESPECIFICATION attribute exists, but is not required as the value of @CONTENTTYPESPECIFICATION is not "OTHER".
+        </message>
+      </error>
+    </rule>
+  </rules>
+</testCase>

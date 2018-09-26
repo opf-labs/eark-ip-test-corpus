@@ -1,0 +1,27 @@
+<testCase>
+  <id specification="" version="" section="" requirement="" />
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP3</reference>
+  <description>
+    @TYPE MUST be present
+    @TYPE MUST have a non-empty value
+  </description>
+  <dependencies />
+  <rules>
+    <rule id="1">
+      <description>@TYPE attribute does not exist</description>
+      <error level="ERROR">
+        <message>
+          mets/@TYPE attribute does not exist. MUST be: attribute exists and has a value that identifies the type of the package (genre).
+        </message>
+      </error>
+    </rule>
+    <rule id="2">
+      <description>@TYPE attribute value is emptry string</description>
+      <error level="ERROR">
+        <message>
+          mets/@TYPE attribute value is emptry string. MUST be: attribute exists and has a value that identifies the type of the package (genre).
+        </message>
+      </error>
+    </rule>
+  </rules>
+</testCase>

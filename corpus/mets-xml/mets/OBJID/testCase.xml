@@ -1,0 +1,38 @@
+<testCase>
+  <id specification="" version="" section="" requirement="" />
+  <!-- There is a need for multiple references here because the general requirements for IDs are defined separately in CSIP Ch. 5.2-->
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP2</reference>
+  <description>
+    @OBJID MUST be present (CSIP2).
+    @OBJID MUST have a non-empty value (CSIP2).
+    @OBJID MUST have a value that starts with a prefix, followed by the actual value of the identifier (CSIP Ch. 5.2).
+  </description>
+  <dependencies />
+  <rules>
+    <rule id="1">
+      <description>@OBJID attribute does not exist</description>
+      <error level="ERROR">
+        <message>
+          mets/@OBJID attribute does not exist. MUST be: attribute exists and has a value that starts with a letter or underscore that form a part of prefix, followed by the actual value of the identifier.
+        </message>
+      </error>
+    </rule>
+    <rule id="2">
+      <description>@OBJID attribute value is emptry string</description>
+      <error level="ERROR">
+        <message>
+          mets/@OBJID attribute value is emptry string. MUST be: a value that starts with a letter or underscore that form a part of prefix, followed by the actual value of the identifier.
+        </message>
+      </error>
+    </rule>
+    <rule id="3">
+      <!-- It is assumed here that a generic ID validator exists that checks for all requirements of CSIP Ch. 5.2-->
+      <description>@OBJID attribute value is not a proper ID</description>
+      <error level="ERROR">
+        <message>
+          mets/@OBJID attribute value is not a proper ID. MUST be: a value that starts with a prefix, followed by the actual value of the identifier. The prefix MUST begin with a letter or underscore.
+        </message>
+      </error>
+    </rule>
+  </rules>
+</testCase>

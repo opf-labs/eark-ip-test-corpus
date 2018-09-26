@@ -1,0 +1,36 @@
+<testCase>
+  <id specification="" version="" section="" requirement="" />
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP4</reference>
+  <description>
+    @CONTENTTYPESPECIFICATION MUST be present and have a value that is one of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ]
+  </description>
+  <dependencies />
+  <rules>
+    <rule id="1">
+      <description>@CONTENTTYPESPECIFICATION attribute does not exist</description>
+      <error level="ERROR">
+        <message>
+          mets/@CONTENTTYPESPECIFICATION attribute does not exist. MUST be: attribute exists and has a value from the fixed vocabulary of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ].
+        </message>
+      </error>
+    </rule>
+    <rule id="2">
+      <description>@CONTENTTYPESPECIFICATION attribute value is emptry string</description>
+      <error level="ERROR">
+        <message>
+          mets/@CONTENTTYPESPECIFICATION attribute value is emptry string. MUST be: a value from the fixed vocabulary of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ].
+        </message>
+      </error>
+    </rule>
+    <rule id="3">
+      <description>
+        @CONTENTTYPESPECIFICATION attribute value does not match any of the allowed values in the vocabulary.
+      </description>
+      <error level="ERROR">
+        <message>
+          mets/@CONTENTTYPESPECIFICATION attribute value does not match any of the allowed values in the vocabulary. MUST be: a value from the fixed vocabulary of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ].
+        </message>
+      </error>
+    </rule>
+  </rules>
+</testCase>
