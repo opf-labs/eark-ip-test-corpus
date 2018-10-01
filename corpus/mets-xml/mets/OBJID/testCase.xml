@@ -1,5 +1,5 @@
 <testCase>
-  <id specification="" version="" section="" requirement="" />
+  <id specification="CSIP" version="2018-09-18" section="5.3.1." requirement="CSIP2" />
   <!-- There is a need for multiple references here because the general requirements for IDs are defined separately in CSIP Ch. 5.2-->
   <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP2</reference>
   <description>

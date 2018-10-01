@@ -1,5 +1,5 @@
 <testCase>
-  <id specification="" version="" section="" requirement="" />
+  <id specification="CSIP" version="2018-09-18" section="5.3.1." requirement="CSIP4" />
   <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP4</reference>
   <description>
     @CONTENTTYPESPECIFICATION MUST be present and have a value that is one of [ SMURFERMS | SMURFSFSB | SIARD1 | SIARD2 | SIARDDK | GeoVectorGML | GeoRasterGeotiff | MIXED | OTHER ]

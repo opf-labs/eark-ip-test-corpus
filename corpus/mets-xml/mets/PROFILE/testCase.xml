@@ -1,5 +1,5 @@
 <testCase>
-  <id specification="" version="" section="" requirement="" />
+  <id specification="CSIP" version="2018-09-18" section="5.3.1." requirement="CSIP6" />
   <reference>https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/specification/implementation/metadata/index.md#CSIP6</reference>
   <description>
     @PROFILE MUST be present.
