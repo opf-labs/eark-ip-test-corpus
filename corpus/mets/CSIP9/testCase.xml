@@ -1,0 +1,26 @@
+<testCase>
+   <id specification="CSIP" version="2018-09-18" section="5.3.2" requirement="CSIP9" />
+  <reference>https://github.com/DILCISBoard/E-ARK-CSIP/ <!--Missing full link-->
+  </reference>
+  <description>
+    The metsHdr-element MUST include the attribute @createdate <!--The CSIP only mentions cardinality and not MoSCoW, should we only refer to cardinality or make it nore human-readable like this description? -->
+  </description>
+  <dependencies/>
+  <rules>
+    <rule id="1">
+      <description>The metsHdr-element does not include the attribute @createdate</description>
+      <error level="ERROR">
+        <message>
+    The metsHdr-element does not include the attribute @createdate
+    The metsHdr-element MUST include the attribute @createdate <!--The CSIP only mentions cardinality and not MoSCoW, should we only refer to cardinality or make it nore human-readable like this error message? -->
+		</message>
+      </error>
+	   <corpusPackages>
+		  <package name="metsHdr_createdate_missing">
+		    <path>fail\metsHdr_createdate_missing</path>
+		    <description>Negative testcase. The metsHdr-element does not include the attribute @createdate</description>
+		  </package>
+	  </corpusPackages>
+    </rule>
+  </rules>
+</testCase>
