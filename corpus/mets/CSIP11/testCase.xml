@@ -8,7 +8,7 @@
   <dependencies/>
   <rules>
     <rule id="1">
-      <description>The metsHdr-element does not include the attribute @csip:OAISPACKAGETYPE</description>
+      <description>The metsHdr-element MUST include the attribute @csip:OAISPACKAGETYPE</description>
       <error level="ERROR">
         <message>
     The metsHdr-element does not include the attribute @csip:OAISPACKAGETYPE
@@ -23,17 +23,57 @@
 	  </corpusPackages>
     </rule>
     <rule id="2">
-      <description>The attribute @csip:OAISPACKAGETYPE does not have a valid value, as given in the vocabulary</description>
+      <description>The attribute @csip:OAISPACKAGETYPE MUST have values taken from the vocabulary</description>
       <error level="ERROR">
         <message>
-          The metsHdr-element does not include the attribute @csip:OAISPACKAGETYPE
-          The metsHdr-element MUST include the attribute @csip:OAISPACKAGETYPE <!--The CSIP only mentions cardinality and not MoSCoW, should we only refer to cardinality or make it nore human-readable like this error message? -->
-        </message>
+          The metsHdr-element attribute @csip:OAISPACKAGETYPE does not have a valid value. Values accepted area "SIP", "AIP", "DIP", "AIU", "AIC"
+         </message>
       </error>
       <corpusPackages>
-        <package name="metsHdr_createdate_missing">
-          <path>fail\metsHdr_createdate_missing</path>
-          <description>Negative testcase. The metsHdr-element does not include the attribute @createdate</description>
+        <package name="metsHdr_OAISPACKAGETYPE_SIP"> <!--This is also the minimal IP-->
+          <path>pass\metsHdr_OAISPACKAGETYPE_SIP</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "SIP"</description> 
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIP">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIP</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "AIP"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_DIP">
+          <path>pass\metsHdr_OAISPACKAGETYPE_DIP</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "DIP"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIU">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIU</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "AIU"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIC">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIC</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "AIC"</description>
+        </package>
+        <!--Packages with values in lower case. Pass or fail?-->
+        <package name="metsHdr_OAISPACKAGETYPE_SIP_lowercase"> 
+          <path>pass\metsHdr_OAISPACKAGETYPE_SIP_lowercase</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "sip"</description> 
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIP_lowercase">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIP_lowercase</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "aip"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_DIP_lowercase">
+          <path>pass\metsHdr_OAISPACKAGETYPE_DIP_lowercase</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "dip"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIU_lowercase">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIU_lowercase</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "aiu"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_AIC_lowercase">
+          <path>pass\metsHdr_OAISPACKAGETYPE_AIC_lowercase</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "aic"</description>
+        </package>
+        <package name="metsHdr_OAISPACKAGETYPE_CSIP>
+          <path>fail\metsHdr_OAISPACKAGETYPE_wrong_value</path>
+          <description>The attribute @csip:OAISPACKAGETYPE has the value "CSIP"</description>
         </package>
       </corpusPackages>
     </rule>
