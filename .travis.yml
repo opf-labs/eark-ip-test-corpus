@@ -8,7 +8,7 @@ python:
 install:
   - sudo apt-get install -y python-dev libxml2-dev libxslt1-dev python3-dev
   - cd ..
-  - git clone https://github.com/E-ARK-Software/py-rest-ip-validator.git
+  - git clone --single-branch --branch feat/cli https://github.com/E-ARK-Software/py-rest-ip-validator.git
   - cd py-rest-ip-validator
   - pip install .[testing]
   - cd ../eark-ip-test-corpus
