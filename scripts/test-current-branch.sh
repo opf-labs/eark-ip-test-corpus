@@ -16,25 +16,30 @@ export SCRIPT_DIR
 
 # Obtain current git branch name and take appropriate action:
 currentBranch="$(git rev-parse --abbrev-ref HEAD)"
-echo "Parsed branch:" $currentBranch
 # Pick up Travis' PR branch if it exists
-echo "Travis branch:" $TRAVIS_BRANCH
 if [[ -v TRAVIS_BRANCH ]]; then
     currentBranch=$TRAVIS_BRANCH
 fi
-echo "Post Travis branch:" $currentBranch
 # IF integration then test find and run all test cases
 if [[ "$currentBranch" == "integration" ]]; then
-  echo "Processing all test cases"
-  find ./corp* -type f -iname "testcase.xml"
+  echo "Processing all test cases on integration."
   # Loop through all testCase.xml files under a filtered subset and call the test case processor
+  while IFS= read -r -d '' CASE
+  do
+    ip-check -t "$CASE"
+  done <    <(find ./corp* -type f -iname "testcase.xml" -print0)
+# ELSE assume a single test case
 else
+  # Parse test case ID from branch
   testCase="$(echo $currentBranch | awk -F/ '{print $NF}')"
   echo "Processing test case:" $testCase
-  find . -path \*/$testCase/\* -iname testcase.xml
-  # ELSE assume a single test case
-  # Parse test case ID from branch
-  # Locate test case file via find
+  # Locate test case files via find
+  while IFS= read -r -d '' CASE
+  do
+    ip-check -t "$CASE"
+    exitStatus=$?
+    exit $exitStatus
+  done <    <(find . -path \*/${testCase^^}/\* -iname "testcase.xml" -print0)
   # call test case runner on single test case file
 fi
 # Test case processer routine:
