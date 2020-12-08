@@ -12,9 +12,6 @@ install:
   - cd py-rest-ip-validator
   - pip install .[testing]
   - cd ../eark-ip-test-corpus
-  - ls /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/
-  - ls /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/ip_validation/cli/
-  - ls /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/ip_validation/cli/resources/
 # command to run tests
 script:
   - ./test-branch
